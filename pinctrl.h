@@ -11,7 +11,9 @@
 
 
 typedef struct{ 
-    volatile uint8_t *port;
+    volatile uint8_t *portOut;
+    volatile uint8_t *ddr;
+    volatile uint8_t *portIn;
     uint8_t pin;
 } pinId_t;
 
@@ -24,5 +26,6 @@ typedef struct{
 
 
 void setPin(pinId_t , bool );
+bool getPin(pinId_t);
 
 #endif
