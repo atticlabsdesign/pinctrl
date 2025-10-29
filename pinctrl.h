@@ -15,8 +15,15 @@ typedef struct{
     volatile uint8_t *ddr;
     volatile uint8_t *portIn;
     uint8_t pin;
-} pinId_t;
+} pinId8_t;
 
+typedef struct{
+    volatile uint8_t *portOut;
+    volatile uint8_t *ddr;
+    volatile uint8_t *portIn;
+    uint8_t groupSize;
+    uint8_t pins[]; //msb is 0th element
+} pinGroup8_t;
 
 /********************
 ---------------------
@@ -25,7 +32,9 @@ typedef struct{
 ********************/
 
 
-void setPin(pinId_t , bool );
-bool getPin(pinId_t);
+void setPin8(pinId8_t , bool );
+bool getPin8(pinId8_t);
+void setGroup8(pinGroup8_t pinId, uint8_t value);
+uint8_t getGroup8(pinGroup8_t);
 
 #endif
