@@ -32,7 +32,7 @@ typedef struct{
 ********************/
 
 
-void setPin8(pinId8_t , bool );
+void setPin8(pinId8_t , bool ); //if there is a way for the preprocessor to check the device architecture the 8 can be removed and we can "overload" the functions with preprocessor directives
 bool getPin8(pinId8_t);
 void setGroup8(pinGroup8_t pinId, uint8_t value);
 uint8_t getGroup8(pinGroup8_t);
